@@ -1,0 +1,10 @@
+[default]
+remappings = [
+    'seaport=lib/seaport/contracts/',
+    'forge-std=lib/forge-std/src/',
+]
+via_ir = true
+solc = "0.8.15"
+
+[ci]
+fuzz-runs = 10_000

@@ -1,0 +1,8 @@
+BasicOrderHashTest:testBasicOrderHash() (gas: 23911)
+BasicOrderHashTest:testSanity() (gas: 624)
+TypeHelpersTest:testAdditionalRecipientsItemType() (gas: 318)
+TypeHelpersTest:testBasicOrderTypeToOrderType() (gas: 428)
+TypeHelpersTest:testOfferedItemType() (gas: 208)
+TypeHelpersTest:testReceivedItemType() (gas: 692)
+TypeHelpersTest:testRoute() (gas: 164)
+TypeHelpersTest:testSanity() (gas: 678)

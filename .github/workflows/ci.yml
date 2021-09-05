@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  FOUNDRY_PROFILE: ci
+
+jobs:
+  run-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install deps
+        run: forge install
+
+      - name: Check gas snapshots
+        env:
+          FOUNDRY_ETH_RPC_URL: ${{ secrets.FOUNDRY_ETH_RPC_URL }}
+        run: forge snapshot --check
+
+      - name: Run tests
+        env:
+          FOUNDRY_ETH_RPC_URL: ${{ secrets.FOUNDRY_ETH_RPC_URL }}
+        run: forge test
